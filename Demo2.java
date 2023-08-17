@@ -38,13 +38,16 @@ public class Demo2 {
         inputValidation:
         do {
             valid = true;
-            System.out.printf("Enter your %s: ", input);
+            System.out.printf("Enter your %s: ", 
+            input.substring(0, 1).toUpperCase()
+            .concat(input.substring(1)));
             value = SCANNER.nextLine().strip();
 
             /* Empty */
             if (value.isBlank()){
                 valid = false;
-                System.out.printf("%s can't be empty \n", input);
+                System.out.printf("%s can't be empty \n", input.substring(0, 1).toUpperCase()
+            .concat(input.substring(1)));
                 continue;
             }
 
