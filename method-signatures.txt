@@ -1,0 +1,84 @@
+m1:
+void myMethod(int x){} 
+
+m2:
+void myMethod(int y){}
+
+sign(m1) = myMethod(int)
+sign(m2) = myMethod(int)
+sign(m1) = sign(m2) -> Overide-equivalent
+
+==================================================
+m1:
+void myMethod(int x, int y){} 
+
+m2:
+void myMethod(int x){}
+
+sign(m1) = myMethod(int,int)
+sign(m2) = myMethod(int)
+
+sign(m1) != sign(m2) -> !Overide-equivalent
+
+================================================
+
+m1:
+void myMethod(Integer x) {}
+
+m2:
+int myMethod(Integer y){}
+
+sign(m1) = myMethod(Integer)
+sign(m2) = myMethod(Integer)
+sign(m1) = sign(m2) -> Overide-equivalent
+
+==================================================
+
+m1:
+int myMethod(List<String> myList){}
+
+m2:
+void myMethod(List myNames){}
+
+sign(m1) = myMethod(List<String>)
+sign(m2) = myMethod(List)
+sign(m1) != sign(m2)
+TypeErasure(sign(m1)) = TypeErasure(sign(m2)) -> Overide-equivalent
+
+===================================================
+
+m1:
+void myMethod(int x, List<String> myNameList){}
+
+m2:
+void myMethod(int y, List<Integer> myNumberList){}
+
+sign(m1) = myMethod(int, List<String>)
+sign(m2) = myMethod(int, List<Integer>)
+
+TypeErasure(sign(m1)) = myMethod(int, List)
+TypeErasure(sign(m2)) = myMethod(int, List)
+
+TypeErasure(sign(m1)) = TypeErasure(sign(m2))  -> Overide-equivalent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
